@@ -1,21 +1,6 @@
-import { generateRandomId, getTodayDateTime } from '../lib/utils'
+import { newList } from '@/scripts/actions'
 
 export default function NewList() {
-	async function newList(data) {
-		'use server'
-
-		const listId = generateRandomId()
-		const todayDateTime = getTodayDateTime()
-
-		const list = {
-			id: listId,
-			name: data.get('name'),
-			category: 'Grocery',
-			date_created: todayDateTime,
-		}
-
-		console.log(list)
-	}
 	return (
 		<div>
 			<h1>What should we name this list?</h1>
