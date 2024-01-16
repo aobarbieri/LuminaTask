@@ -3,14 +3,14 @@ import { sql } from '@vercel/postgres'
 const { db } = require('@vercel/postgres')
 
 export async function fetchLists() {
+	const client = await db.connect()
 	try {
-		const data = await sql`
-      SELECT
-        *
-      FROM lists
-      ORDER BY name ASC
-    `
-		const lists = data.rows
+		const query = {
+			text: 'SELECT * FROM Lists ORDER BY name ASC',
+		}
+		const res = await client.query(query)
+
+		const lists = res.rows
 		return lists
 	} catch (err) {
 		console.error('Database Error:', err)
@@ -26,6 +26,7 @@ export async function saveList(list) {
 			values: [list.id, list.name, list.category, list.date_created],
 		}
 		await client.query(query)
+
 		console.log('Data added to Lists table successfully')
 	} catch (error) {
 		console.error('Error adding data to Lists table:', error)
