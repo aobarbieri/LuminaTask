@@ -1,8 +1,9 @@
 'use server'
-import { generateRandomId, getTodayDateTime } from '@/scripts/utils'
+import { generateUUID, getTodayDateTime } from '@/scripts/utils'
+import { saveList } from '@/app/lib/data'
 
 export async function newList(data) {
-	const listId = generateRandomId()
+	const listId = generateUUID()
 	const todayDateTime = getTodayDateTime()
 
 	const list = {
@@ -12,5 +13,5 @@ export async function newList(data) {
 		date_created: todayDateTime,
 	}
 
-	console.log(list)
+	saveList(list)
 }

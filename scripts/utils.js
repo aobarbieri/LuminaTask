@@ -1,8 +1,8 @@
-function generateRandomId() {
-	const timestamp = new Date().getTime()
-	const randomNum = Math.floor(Math.random() * 1000)
-	const randomId = `${timestamp}-${randomNum}`
-	return randomId
+const { v4: uuidv4 } = require('uuid')
+
+function generateUUID() {
+	const validUUID = uuidv4()
+	return validUUID
 }
 
 function getTodayDateTime() {
@@ -19,6 +19,6 @@ function getTodayDateTime() {
 }
 
 module.exports = {
-	generateRandomId,
+	generateUUID,
 	getTodayDateTime,
 }
