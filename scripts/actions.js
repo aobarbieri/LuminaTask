@@ -1,6 +1,7 @@
 'use server'
 import { generateUUID, getTodayDateTime } from '@/scripts/utils'
 import { saveList } from '@/app/lib/data'
+import { revalidatePath } from 'next/cache'
 
 export async function newList(data) {
 	const listId = generateUUID()
@@ -14,4 +15,5 @@ export async function newList(data) {
 	}
 
 	saveList(list)
+	revalidatePath('/lists')
 }
