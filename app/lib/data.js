@@ -11,7 +11,6 @@ export async function fetchLists() {
       ORDER BY name ASC
     `
 		const lists = data.rows
-		console.log(lists)
 		return lists
 	} catch (err) {
 		console.error('Database Error:', err)
