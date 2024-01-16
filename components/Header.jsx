@@ -1,12 +1,25 @@
 import Image from 'next/image'
-import Nav from './nav'
+import Link from 'next/link'
+
+import NavLink from './NavLink'
 import logo from '@/assets/logo.svg'
 
 export default function Header() {
 	return (
 		<header>
-			<Image src={logo} alt='Food and Stuff logo' width={131} height={31} priority />
-			<Nav />
+			<nav>
+				<Link href='/'>
+					<Image src={logo} alt='Food and Stuff logo' width={131} height={31} priority />
+				</Link>
+				<ul>
+					<li>
+						<NavLink href='/lists'>My Lists</NavLink>
+					</li>
+					<li>
+						<NavLink href='/account'>Account</NavLink>
+					</li>
+				</ul>
+			</nav>
 		</header>
 	)
 }
