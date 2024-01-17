@@ -26,6 +26,7 @@ export async function deleteList(id) {
 }
 
 export async function newItem(data) {
+	// validations - check if data was provided before sending it to the DB
 	const itemId = generateUUID()
 	const listId = data.get('list-id')
 	const quantity = parseInt(data.get('quantity'))
@@ -33,12 +34,12 @@ export async function newItem(data) {
 	const item = {
 		id: itemId,
 		list_id: listId,
-		name: data.get('name'),
+		name: data.get('name').trim(),
 		quantity: quantity,
 		purchased: false,
 	}
 
 	console.log(item)
 	createItem(item)
-	revalidatePath(`/lists/${listId}`)
+	revalidatePath(`/lists`)
 }

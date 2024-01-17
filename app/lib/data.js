@@ -21,7 +21,7 @@ export async function fetchListById(id) {
 	const client = await db.connect()
 	try {
 		const query = {
-			text: 'SELECT lists.id FROM lists WHERE lists.id = $1',
+			text: 'SELECT * FROM lists WHERE lists.id = $1',
 			values: [id],
 		}
 		const res = await client.query(query)

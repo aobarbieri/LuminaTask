@@ -13,7 +13,7 @@ export default async function View({ params }) {
 		<main>
 			<br />
 			<hr />
-			<h1>Add items</h1>
+			<h1>Add items to {list[0].name}&apos;s list</h1>
 			{/* fetch the properties of this list, we need to name to display here */}
 
 			<form action={newItem}>
@@ -21,11 +21,11 @@ export default async function View({ params }) {
 				<label htmlFor='name' id='name'>
 					Item name
 				</label>
-				<input type='text' name='name' id='name' />
+				<input type='text' name='name' id='name' required />
 				<label htmlFor='quantity' id='quantity'>
 					Quantity
 				</label>
-				<input type='number' name='quantity' id='quantity' />
+				<input type='number' name='quantity' id='quantity' required />
 				<button type='submit'>Add Item</button>
 			</form>
 			<br />
