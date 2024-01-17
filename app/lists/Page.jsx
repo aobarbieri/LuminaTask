@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import Lists from '../../components/Lists'
+import Lists from '@/app/ui/lists'
 
 export default function ListsOverview() {
 	return (

@@ -17,6 +17,23 @@ export async function fetchLists() {
 	}
 }
 
+export async function fetchListById(id) {
+	const client = await db.connect()
+	try {
+		const query = {
+			text: 'SELECT lists.id FROM lists WHERE lists.id = $1',
+			values: [id],
+		}
+		const res = await client.query(query)
+		const list = res.rows
+		return list
+	} catch (error) {
+		console.error('Failed to fetch list:', error)
+	} finally {
+		await client.end()
+	}
+}
+
 export async function saveList(list) {
 	const client = await db.connect()
 	try {
@@ -25,8 +42,6 @@ export async function saveList(list) {
 			values: [list.id, list.name, list.category, list.date_created],
 		}
 		await client.query(query)
-
-		console.log('Data added to Lists table successfully')
 	} catch (error) {
 		console.error('Error adding data to Lists table:', error)
 	} finally {
@@ -45,6 +60,23 @@ export async function deleteListById(id) {
 		return res
 	} catch (error) {
 		console.error('Error deleting row from Lists table:', error)
+	} finally {
+		await client.end()
+	}
+}
+
+export async function createItem(item) {
+	const client = await db.connect()
+
+	try {
+		const query = {
+			text: 'INSERT INTO items (id, list_id, name, quantity, purchased) VALUES ($1, $2, $3, $4, $5)',
+			values: [item.id, item.list_id, item.name, item.quantity, item.purchased],
+		}
+	} catch (error) {
+		return {
+			message: 'Database Error: Failed to Create Item.',
+		}
 	} finally {
 		await client.end()
 	}
