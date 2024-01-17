@@ -1,6 +1,6 @@
 'use server'
 import { generateUUID, getTodayDateTime } from '@/scripts/utils'
-import { saveList } from '@/app/lib/data'
+import { saveList, deleteListById } from '@/app/lib/data'
 import { revalidatePath } from 'next/cache'
 
 export async function newList(data) {
@@ -15,5 +15,10 @@ export async function newList(data) {
 	}
 
 	saveList(list)
+	revalidatePath('/lists')
+}
+
+export async function deleteList(id) {
+	deleteListById(id)
 	revalidatePath('/lists')
 }

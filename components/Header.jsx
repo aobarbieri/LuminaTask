@@ -15,9 +15,6 @@ export default function Header() {
 					<li>
 						<NavLink href='/lists'>My Lists</NavLink>
 					</li>
-					<li>
-						<NavLink href='/account'>Account</NavLink>
-					</li>
 				</ul>
 			</nav>
 		</header>

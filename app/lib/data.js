@@ -1,5 +1,4 @@
-import { sql } from '@vercel/postgres'
-// Library to interact with PostgreSQL
+// Library to interact with PostgresSQL
 const { db } = require('@vercel/postgres')
 
 export async function fetchLists() {
@@ -30,6 +29,22 @@ export async function saveList(list) {
 		console.log('Data added to Lists table successfully')
 	} catch (error) {
 		console.error('Error adding data to Lists table:', error)
+	} finally {
+		await client.end()
+	}
+}
+
+export async function deleteListById(id) {
+	const client = await db.connect()
+	try {
+		const query = {
+			text: 'DELETE FROM lists WHERE id = $1',
+			values: [id],
+		}
+		const res = await client.query(query)
+		return res
+	} catch (error) {
+		console.error('Error deleting row from Lists table:', error)
 	} finally {
 		await client.end()
 	}
