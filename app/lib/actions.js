@@ -1,6 +1,6 @@
 'use server'
 import { generateUUID, getTodayDateTime } from './utils'
-import { saveList, deleteListById, saveListItem } from './data'
+import { saveList, deleteListById, createItem } from './data'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
@@ -27,16 +27,18 @@ export async function deleteList(id) {
 
 export async function newItem(data) {
 	const itemId = generateUUID()
+	const listId = data.get('list-id')
+	const quantity = parseInt(data.get('quantity'))
 
 	const item = {
 		id: itemId,
-		list_id: data.get('list-id'),
+		list_id: listId,
 		name: data.get('name'),
-		quantity: data.get('quantity'),
+		quantity: quantity,
 		purchased: false,
 	}
 
 	console.log(item)
-	// saveListItem(item)
-	revalidatePath(`/lists/${list_id}`)
+	createItem(item)
+	revalidatePath(`/lists/${listId}`)
 }

@@ -73,6 +73,7 @@ export async function createItem(item) {
 			text: 'INSERT INTO items (id, list_id, name, quantity, purchased) VALUES ($1, $2, $3, $4, $5)',
 			values: [item.id, item.list_id, item.name, item.quantity, item.purchased],
 		}
+		await client.query(query)
 	} catch (error) {
 		return {
 			message: 'Database Error: Failed to Create Item.',
