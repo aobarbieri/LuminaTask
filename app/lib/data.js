@@ -1,14 +1,12 @@
-// Library to interact with PostgresSQL
 const { db } = require('@vercel/postgres')
 
 export async function fetchLists() {
 	const client = await db.connect()
 	try {
 		const query = {
-			text: 'SELECT * FROM Lists ORDER BY name ASC',
+			text: 'SELECT * FROM lists ORDER BY name ASC',
 		}
 		const res = await client.query(query)
-
 		const lists = res.rows
 		return lists
 	} catch (err) {

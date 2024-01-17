@@ -39,7 +39,6 @@ export async function newItem(data) {
 		purchased: false,
 	}
 
-	console.log(item)
 	createItem(item)
 	revalidatePath(`/lists`)
 }
