@@ -1,23 +1,12 @@
 import { Suspense } from 'react'
-import { fetchLists } from '@/app/lib/data'
+import Lists from '@/app/ui/lists'
 
-async function AllLists() {
-	const lists = await fetchLists()
-	return (
-		<ul>
-			{lists.map((list) => (
-				<li key={list.id}>{list.name}</li>
-			))}
-		</ul>
-	)
-}
-
-export default function Lists() {
+export default function ListsOverview() {
 	return (
 		<>
 			<h1>all lists here</h1>
 			<Suspense fallback={<p>Fetching lists ...</p>}>
-				<AllLists />
+				<Lists />
 			</Suspense>
 		</>
 	)

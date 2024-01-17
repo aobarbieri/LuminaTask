@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-
 import NavLink from './NavLink'
 import logo from '@/assets/logo.svg'
 
@@ -14,9 +13,6 @@ export default function Header() {
 				<ul>
 					<li>
 						<NavLink href='/lists'>My Lists</NavLink>
-					</li>
-					<li>
-						<NavLink href='/account'>Account</NavLink>
 					</li>
 				</ul>
 			</nav>
