@@ -11,3 +11,9 @@
     useFormStatus returns the status for a specific <form>, so it must be defined as a child of the <form> element.
     useFormStatus is a React hook and therefore must be used in a Client Component
     ex: ui/lists/delete-btn.jsx
+
+## Fonts
+
+`next/font` will automatically optimize your fonts (including custom fonts) and remove external network requests for improved privacy and performance.
+Automatically self-host any Google Font.
+Fonts are included in the deployment and served from the same domain as your deployment. No requests are sent to Google by the browser.
