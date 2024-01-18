@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { fetchLists } from '@/app/lib/data'
 import { ViewList, DeleteList } from './buttons'
 
@@ -9,7 +10,9 @@ export default async function Lists() {
 				{lists.map((list) => (
 					<div key={list.id}>
 						<ViewList id={list.id} />
+
 						<li>{list.name}</li>
+
 						<DeleteList id={list.id} />
 					</div>
 				))}

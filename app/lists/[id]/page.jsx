@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { fetchListById } from '@/app/lib/data'
 import { fetchListItems } from '@/app/lib/items-data'
 import { newItem } from '@/app/lib/actions'
@@ -9,7 +10,7 @@ export default async function View({ params }) {
 	const items = await fetchListItems(id)
 
 	if (!list) {
-		console.log('list not found')
+		notFound()
 	}
 
 	return (
