@@ -1,5 +1,5 @@
 import { fetchLists } from '@/app/lib/data'
-import { ViewList, DeleteList } from './list-actions'
+import { ViewList, DeleteList } from './buttons'
 
 export default async function Lists() {
 	const lists = await fetchLists()

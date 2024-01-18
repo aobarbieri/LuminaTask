@@ -1,6 +1,7 @@
 'use server'
 import { generateUUID, getTodayDateTime } from './utils'
-import { saveList, deleteListById, createItem } from './data'
+import { saveList, deleteListById } from './data'
+import { createItem } from './items-data'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
@@ -40,5 +41,5 @@ export async function newItem(data) {
 	}
 
 	createItem(item)
-	revalidatePath(`/lists`)
+	revalidatePath(`/lists/${listId}`)
 }
