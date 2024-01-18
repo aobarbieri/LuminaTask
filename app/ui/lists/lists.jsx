@@ -1,9 +1,9 @@
-import { Suspense } from 'react'
 import { fetchLists } from '@/app/lib/data'
-import { ViewList, DeleteList } from './buttons'
+import { ViewList, DeleteList } from './forms'
 
 export default async function Lists() {
 	const lists = await fetchLists()
+
 	if (lists) {
 		return (
 			<ul>

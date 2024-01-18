@@ -1,3 +1,4 @@
+'use server'
 const { db } = require('@vercel/postgres')
 
 async function itemAction(action, arr) {
@@ -59,7 +60,7 @@ export async function createItem(item) {
 	}
 }
 
-export function deleteItemById(id) {
+export async function deleteItemById(id) {
 	const action = 'DELETE FROM items WHERE id = $1'
 	const arr = [id]
 	itemAction(action, arr)

@@ -1,3 +1,4 @@
+'use server'
 const { db } = require('@vercel/postgres')
 
 async function listAction(action, arr) {
@@ -95,7 +96,7 @@ export async function saveList(list) {
 // 	}
 // }
 
-export function deleteListById(id) {
+export async function deleteListById(id) {
 	const action = 'DELETE FROM lists WHERE id = $1'
 	const arr = [id]
 	listAction(action, arr)

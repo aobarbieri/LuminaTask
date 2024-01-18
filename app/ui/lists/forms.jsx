@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import DeleteButton from './delete-btn'
 import { deleteList } from '@/app/lib/actions'
 
 export function ViewList({ id }) {
@@ -9,7 +10,7 @@ export function DeleteList({ id }) {
 	const deleteListWithId = deleteList.bind(null, id)
 	return (
 		<form action={deleteListWithId}>
-			<button>X</button>
+			<DeleteButton />
 		</form>
 	)
 }

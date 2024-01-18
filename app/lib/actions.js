@@ -3,7 +3,7 @@ import { generateUUID, getTodayDateTime } from './utils'
 import { saveList, deleteListById } from './data'
 import { createItem } from './items-data'
 import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 
 export async function newList(data) {
 	const listId = generateUUID()
@@ -16,18 +16,17 @@ export async function newList(data) {
 		date_created: todayDateTime,
 	}
 
-	saveList(list)
+	await saveList(list)
 	revalidatePath('/lists')
 	redirect('/lists')
 }
 
 export async function deleteList(id) {
-	deleteListById(id)
+	await deleteListById(id)
 	revalidatePath('/lists')
 }
 
 export async function newItem(data) {
-	// validations - check if data was provided before sending it to the DB
 	const itemId = generateUUID()
 	const listId = data.get('list-id')
 	const quantity = parseInt(data.get('quantity'))
@@ -40,6 +39,6 @@ export async function newItem(data) {
 		purchased: false,
 	}
 
-	createItem(item)
+	await createItem(item)
 	revalidatePath(`/lists/${listId}`)
 }
