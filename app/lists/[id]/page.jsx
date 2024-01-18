@@ -1,9 +1,12 @@
 import { fetchListById } from '@/app/lib/data'
+import { fetchListItems } from '@/app/lib/items-data'
 import { newItem } from '@/app/lib/actions'
+import { DeleteItem } from '@/app/ui/items/buttons'
 
 export default async function View({ params }) {
 	const id = params.id
 	const list = await fetchListById(id)
+	const items = await fetchListItems(id)
 
 	if (!list) {
 		console.log('list not found')
@@ -14,7 +17,6 @@ export default async function View({ params }) {
 			<br />
 			<hr />
 			<h1>Add items to {list[0].name}&apos;s list</h1>
-			{/* fetch the properties of this list, we need to name to display here */}
 
 			<form action={newItem}>
 				<input type='hidden' name='list-id' value={id} />
@@ -32,7 +34,13 @@ export default async function View({ params }) {
 			<hr />
 			<div>
 				<h2>List items here</h2>
-				{/* fetch all the items related to this list and display here */}
+				{items?.map((item) => (
+					<div key={item.id}>
+						<p>{item.name}</p>
+						<p>{item.quantity}</p>
+						<DeleteItem id={item.id} />
+					</div>
+				))}
 			</div>
 		</main>
 	)
