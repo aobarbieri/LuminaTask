@@ -13,31 +13,19 @@
   padding         : 5.12rem 3.06rem;
   width           : 35.9375rem;
   max-width       : 35.9375rem;
-  max-height      : 19.0625rem;
+  max-height      : 27rem;
   border-radius   : .5rem;
   border          : 2px solid var(--border-color);
   text-align      : center;
 }
 
 .container h1 {
-  margin-bottom : 3.06rem;
+  margin-bottom : 1.88rem;
   color         : var(--gray-1);
   font-size     : 1.75rem;
   font-weight   : 700;
   line-height   : 1.875rem;
   letter-spacing: 0.0175rem;
-}
-
-.container a {
-  padding       : 1rem 9.4375rem;
-  border-radius : 0.3125rem;
-  background    : #F96E62;
-  font-size     : 1.4375rem;
-  overflow      : hidden;
-  font-weight   : 700;
-  line-height   : 3.875rem;
-  letter-spacing: 0.01438rem;
-  color         : #fff;
 }
 
 .container a img {

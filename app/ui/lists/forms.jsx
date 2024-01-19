@@ -1,9 +1,20 @@
 import Link from 'next/link'
 import DeleteButton from './delete-btn'
-import { removeList } from '@/app/lib/lists-actions'
+import { removeList, newList } from '@/app/lib/lists-actions'
 
 export function ViewList({ id }) {
 	return <Link href={`/lists/${id}`}>View</Link>
+}
+
+export function CreateList() {
+	return (
+		<form action={newList}>
+			<input placeholder='List name' type='text' name='name' id='name' required />
+			<button className='btn-primary' type='submit'>
+				Save
+			</button>
+		</form>
+	)
 }
 
 export function DeleteList({ id }) {
@@ -13,11 +24,6 @@ export function DeleteList({ id }) {
 			<DeleteButton />
 		</form>
 	)
-}
-
-export function CreateList() {
-	// WIP
-	return <></>
 }
 
 export function UpdateList({ id }) {

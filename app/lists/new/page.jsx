@@ -1,15 +1,13 @@
-import { newList } from '@/app/lib/lists-actions'
+import { CreateList } from '@/app/ui/lists/forms'
+import styles from './page.module.css'
 
 export default function NewList() {
 	return (
-		<div>
-			<h1>What should we name this list?</h1>
-			{/* hidden field */}
-			<form action={newList}>
-				<input type='text' name='name' id='name' required />
-				<button type='submit'>Save</button>
-			</form>
-			{/* <button>Skip</button> */}
-		</div>
+		<main className={styles.main}>
+			<section className={styles.container}>
+				<h1>What should we name this list?</h1>
+				<CreateList />
+			</section>
+		</main>
 	)
 }

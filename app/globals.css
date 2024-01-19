@@ -1,20 +1,17 @@
 :root {
-  --app-width: 60.25rem;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-  --gray-1            : #2A2A2A;
-  --gray-2            : #232323;
-  --gray-3            : #1B1B1B;
-  --gray-4            : #171717;
-  --gray-5            : #414141;
-  --gray-5            : #747474;
-  --brand-primary     : #F96E62;
-  --bg-color-light    : #F6F6F6;
-  --bg-color          : #DDD;
-  --border-color-light: #CECECE;
-  --border-color      : #CBCBCB;
-  --border-color-dark : #979797;
+  --app-width        : 60.25rem;
+  --gray-1           : #2A2A2A;
+  --gray-2           : #232323;
+  --gray-3           : #1B1B1B;
+  --gray-4           : #171717;
+  --gray-5           : #414141;
+  --gray-5           : #747474;
+  --brand-primary    : #F96E62;
+  --bg-color-light   : #F6F6F6;
+  --bg-color         : #DDD;
+  --border-color     : #CECECE;
+  --border-color-dark: #979797;
+  --placeholder      : #B0B0B0;
 
 }
 
@@ -47,4 +44,36 @@ a {
 
 li {
   list-style: none;
+}
+
+input {
+  height        : 3.5rem;
+  width         : 100%;
+  padding       : 1rem 0.875rem;
+  border-radius : 0.3125rem;
+  border        : 2px solid var(--border-color);
+  background    : var(--bg-color-light);
+  font-size     : 1.4375rem;
+  font-weight   : 400;
+  line-height   : 1.875rem;
+  letter-spacing: 0.01438rem;
+}
+
+input::placeholder {
+  color: var(--placeholder);
+}
+
+.btn-primary {
+  width         : 100%;
+  height        : 3.875rem;
+  padding       : 1rem 9.4375rem;
+  border        : 0;
+  border-radius : 0.3125rem;
+  background    : var(--brand-primary);
+  color         : #FFF;
+  font-size     : 1.4375rem;
+  font-weight   : 700;
+  line-height   : 1.875rem;
+  letter-spacing: 0.01438rem;
+  cursor        : pointer;
 }
