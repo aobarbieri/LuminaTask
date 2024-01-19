@@ -3,11 +3,6 @@ import { generateUUID } from './utils'
 import { deleteItem, create } from './items-data'
 import { revalidatePath } from 'next/cache'
 
-export async function removeItem(id) {
-	await deleteItem(id)
-	revalidatePath(`/lists`)
-}
-
 export async function newItem(data) {
 	const itemId = generateUUID()
 	const listId = data.get('list-id')
@@ -23,4 +18,9 @@ export async function newItem(data) {
 
 	await create(item)
 	revalidatePath(`/lists/${listId}`)
+}
+
+export async function removeItem(id) {
+	await deleteItem(id)
+	revalidatePath(`/lists`)
 }

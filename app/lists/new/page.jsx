@@ -1,4 +1,4 @@
-import { newList } from '@/app/lib/actions'
+import { newList } from '@/app/lib/lists-actions'
 
 export default function NewList() {
 	return (

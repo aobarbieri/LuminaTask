@@ -1,8 +1,8 @@
-import { fetchLists } from '@/app/lib/data'
+import { getLists } from '@/app/lib/lists-data'
 import { ViewList, DeleteList } from './forms'
 
 export default async function Lists() {
-	const lists = await fetchLists()
+	const lists = await getLists()
 
 	if (lists) {
 		return (

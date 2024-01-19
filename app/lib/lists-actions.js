@@ -1,8 +1,8 @@
 'use server'
 import { generateUUID, getTodayDateTime } from './utils'
-import { saveList, deleteListById } from './data'
+import { create, deleteList } from './lists-data'
 import { revalidatePath } from 'next/cache'
-import { redirect, useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 
 export async function newList(data) {
 	const listId = generateUUID()
@@ -15,12 +15,12 @@ export async function newList(data) {
 		date_created: todayDateTime,
 	}
 
-	await saveList(list)
+	await create(list)
 	revalidatePath('/lists')
 	redirect('/lists')
 }
 
-export async function deleteList(id) {
-	await deleteListById(id)
+export async function removeList(id) {
+	await deleteList(id)
 	revalidatePath('/lists')
 }

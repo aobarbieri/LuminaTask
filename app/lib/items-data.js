@@ -2,10 +2,10 @@
 import { sql } from '@vercel/postgres'
 import { unstable_noStore as noStore } from 'next/cache'
 
-export async function getItems(id) {
+export async function getItems(listId) {
 	noStore()
 	try {
-		const data = await sql`SELECT items.* FROM items JOIN lists ON items.list_id = lists.id WHERE lists.id = ${id}`
+		const data = await sql`SELECT items.* FROM items JOIN lists ON items.list_id = lists.id WHERE lists.id = ${listId}`
 		return data.rows
 	} catch (err) {
 		console.error('Database Error:', err)

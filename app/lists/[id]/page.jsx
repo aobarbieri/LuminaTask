@@ -1,13 +1,13 @@
 import { notFound } from 'next/navigation'
-import { fetchListById } from '@/app/lib/data'
+import { getListById } from '@/app/lib/lists-data'
 import { getItems } from '@/app/lib/items-data'
 import { newItem } from '@/app/lib/items-actions'
 import { DeleteItem } from '@/app/ui/items/buttons'
 
 export default async function View({ params }) {
-	const id = params.id
-	const list = await fetchListById(id)
-	const items = await getItems(id)
+	const listId = params.id
+	const list = await getListById(listId)
+	const items = await getItems(listId)
 
 	if (!list) {
 		notFound()
@@ -20,7 +20,7 @@ export default async function View({ params }) {
 			<h1>Add items to {list[0].name}&apos;s list</h1>
 
 			<form action={newItem}>
-				<input type='hidden' name='list-id' value={id} />
+				<input type='hidden' name='list-id' value={listId} />
 				<label htmlFor='name' id='name'>
 					Item name
 				</label>
