@@ -13,6 +13,9 @@ export default function Header() {
 				</Link>
 				<ul>
 					<li className={styles.item}>
+						<NavLink href='/'>Home</NavLink>
+					</li>
+					<li className={styles.item}>
 						<NavLink href='/lists'>My Lists</NavLink>
 					</li>
 				</ul>

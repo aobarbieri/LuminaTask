@@ -13,6 +13,7 @@ export default async function View({ params }) {
 	if (!list) {
 		notFound()
 	}
+	console.log(items.length)
 
 	return (
 		<main>

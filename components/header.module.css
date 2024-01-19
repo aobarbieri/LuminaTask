@@ -15,6 +15,11 @@
     align-items    : center;
 }
 
+.header nav ul {
+    display: flex;
+    gap    : 3.52rem;
+}
+
 .item:hover,
 .item:active {
     text-decoration      : solid underline var(--brand-primary) 3px;

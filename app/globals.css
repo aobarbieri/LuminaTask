@@ -13,6 +13,8 @@
   --border-color-dark: #979797;
   --placeholder      : #B0B0B0;
 
+  --btn-link-border: #5D5D6B;
+  --btn-link-color : #494953;
 }
 
 * {
@@ -118,6 +120,22 @@ input::placeholder {
 .link-btn-primary {
   overflow   : hidden;
   line-height: 3.875rem;
+}
+
+.link-btn-default {
+  padding       : 0.35175rem 0.7035rem;
+  color         : var(--btn-link-color);
+  border-radius : 0.35175rem;
+  border        : 1.688px solid var(--btn-link-border);
+  background    : #FFF;
+  font-size     : 1.05525rem;
+  font-weight   : 700;
+  line-height   : 2.1105rem;
+  letter-spacing: 0.01056rem;
+}
+
+.link-btn-default img {
+  margin-right: .42rem;
 }
 
 

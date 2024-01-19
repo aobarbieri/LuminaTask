@@ -1,22 +1,43 @@
-.listWrapper {
+.wrapper {
     display        : flex;
     flex-wrap      : wrap;
     row-gap        : 2.07rem;
     justify-content: space-between;
 }
 
-.listContainer {
-    width        : 48.5%;
+.container {
+    max-width    : 48.5%;
     border-radius: 0.28138rem;
     border       : 1.126px solid var(--border-color-dark);
     padding      : 1.407rem 1.54769rem;
     background   : #FFF;
 }
 
+.content {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-between;
+}
+
+.content h4 {
+    white-space  : nowrap;
+    overflow     : hidden;
+    text-overflow: ellipsis;
+}
+
 .date {
+    margin-left  : 1rem;
     border-radius: 0.28138rem;
     background   : rgba(149, 163, 255, 0.50);
-    padding      : .625rem .4375rem;
+    padding      : 0 .4375rem;
     font-weight  : 600;
     color        : #000;
+}
+
+.content p {
+    font-weight: 400;
+}
+
+.content p span {
+    margin-left: .7rem;
 }
