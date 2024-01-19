@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import DeleteButton from './delete-btn'
 import { removeList, newList } from '@/app/lib/lists-actions'
 import styles from './forms.module.css'

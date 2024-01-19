@@ -1,0 +1,25 @@
+.main {
+    background-color: #fff;
+    width           : var(--app-width);
+    flex            : 1;
+    margin          : 0 auto;
+    padding         : 3.31rem 0 0;
+    display         : flex;
+    flex-direction  : column;
+}
+
+.main h1 {
+    margin: 0 0 3.22rem 4.99rem;
+}
+
+.content {
+    background-color: var(--bg-color-light);
+    padding         : 2.46rem 4.99rem;
+    flex            : 1;
+}
+
+.wrapper {
+    display        : flex;
+    justify-content: space-between;
+    margin-bottom  : 1.18rem;
+}

@@ -11,7 +11,7 @@ function getTodayDate() {
 	const month = String(today.getMonth() + 1).padStart(2, '0')
 	const day = String(today.getDate()).padStart(2, '0')
 
-	const todayDate = `${month}-${day}-${year}`
+	const todayDate = `${month}/${day}/${year}`
 	return todayDate
 }
 

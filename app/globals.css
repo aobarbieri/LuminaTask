@@ -37,6 +37,42 @@ body {
   background-position-y: 4rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color      : var(--gray-1);
+  font-weight: 700;
+  line-height: 2.1105rem;
+}
+
+h1 {
+  font-size     : 1.96981rem;
+  letter-spacing: 0.01969rem;
+}
+
+h3 {
+  font-size     : 1.26631rem;
+  letter-spacing: 0.01269rem;
+}
+
+h4 {
+  color         : #000;
+  font-size     : 1.19594rem;
+  font-weight   : 600;
+  letter-spacing: 0.01194rem;
+}
+
+p,
+span {
+  font-size     : 1.05525rem;
+  letter-spacing: 0.01056rem;
+}
+
 a {
   color          : inherit;
   text-decoration: none;
@@ -108,9 +144,7 @@ input::placeholder {
 }
 
 .inner-container h1 {
-  color         : var(--gray-1);
   font-size     : 1.75rem;
-  font-weight   : 700;
   line-height   : 1.875rem;
   letter-spacing: 0.0175rem;
 }

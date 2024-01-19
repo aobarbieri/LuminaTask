@@ -3,6 +3,7 @@ import { getListById } from '@/app/lib/lists-data'
 import { getItems } from '@/app/lib/items-data'
 import { newItem } from '@/app/lib/items-actions'
 import { DeleteItem } from '@/app/items/ui/buttons'
+import { DeleteList } from '../ui/forms'
 
 export default async function View({ params }) {
 	const listId = params.id
@@ -43,6 +44,7 @@ export default async function View({ params }) {
 					</div>
 				))}
 			</div>
+			<DeleteList id={list[0].id} />
 		</main>
 	)
 }
