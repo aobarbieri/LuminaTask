@@ -10,7 +10,6 @@
     border-radius: 0.28138rem;
     border       : 1.126px solid var(--border-color-dark);
     padding      : 1.407rem 1.54769rem;
-    background   : #FFF;
 }
 
 .content {
@@ -26,12 +25,12 @@
 }
 
 .date {
-    margin-left  : 1rem;
-    border-radius: 0.28138rem;
-    background   : rgba(149, 163, 255, 0.50);
-    padding      : 0 .4375rem;
-    font-weight  : 600;
-    color        : #000;
+    margin-left     : 1rem;
+    border-radius   : 0.28138rem;
+    background-color: rgba(149, 163, 255, 0.50);
+    padding         : 0 .4375rem;
+    font-weight     : 600;
+    color           : #000;
 }
 
 .content p {

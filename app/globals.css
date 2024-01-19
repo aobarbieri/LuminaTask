@@ -166,3 +166,12 @@ input::placeholder {
   line-height   : 1.875rem;
   letter-spacing: 0.0175rem;
 }
+
+.lists-container {
+  background-color: #FFF;
+  transition      : background-color 0.3s;
+}
+
+.lists-container:hover {
+  background-color: var(--bg-color-light);
+}

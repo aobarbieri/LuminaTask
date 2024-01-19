@@ -11,7 +11,7 @@ export default async function Lists() {
 		return (
 			<section className={styles.wrapper}>
 				{lists.map((list) => (
-					<div className={styles.container} key={list.id}>
+					<div className={`${styles.container} lists-container`} key={list.id}>
 						<Link className={styles.content} href={`/lists/${list.id}`}>
 							<h4>{list.name}</h4>
 							<span className={styles.date}>{list.date_created}</span>
