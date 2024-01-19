@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import DeleteButton from './delete-btn'
 import { removeList, newList } from '@/app/lib/lists-actions'
+import styles from './forms.module.css'
 
 export function ViewList({ id }) {
 	return <Link href={`/lists/${id}`}>View</Link>
@@ -8,7 +9,7 @@ export function ViewList({ id }) {
 
 export function CreateList() {
 	return (
-		<form action={newList}>
+		<form className={styles.createForm} action={newList}>
 			<input placeholder='List name' type='text' name='name' id='name' required />
 			<button className='btn-primary' type='submit'>
 				Save

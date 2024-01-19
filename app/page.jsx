@@ -5,10 +5,10 @@ import add from '@/assets/icons/add.svg'
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
-			<section className={styles.container}>
+		<main className={`outer-container`}>
+			<section className={`${styles.container} inner-container`}>
 				<h1>Create a new shopping list</h1>
-				<Link href='lists/new/'>
+				<Link className='link-btn-primary' href='lists/new/'>
 					<Image src={add} alt='plus' width={17} height={17} />
 					Create list
 				</Link>

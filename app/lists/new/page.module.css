@@ -1,71 +1,7 @@
-.main {
-  width          : var(--app-width);
-  min-height     : 100%;
-  margin         : 0 auto;
-  flex           : 1;
-  display        : flex;
-  justify-content: center;
-  align-items    : center;
-}
-
 .container {
-  background-color: #fff;
-  padding         : 5.12rem 3.06rem;
-  width           : 35.9375rem;
-  max-width       : 35.9375rem;
-  max-height      : 27rem;
-  border-radius   : .5rem;
-  border          : 2px solid var(--border-color);
-  text-align      : center;
+  max-height: 27rem;
 }
 
 .container h1 {
-  margin-bottom : 1.88rem;
-  color         : var(--gray-1);
-  font-size     : 1.75rem;
-  font-weight   : 700;
-  line-height   : 1.875rem;
-  letter-spacing: 0.0175rem;
-}
-
-.container a img {
-  margin-right: .625rem;
-}
-
-
-
-
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border    : 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
-
-  .card:hover span {
-    transform: translateX(4px);
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .card:hover span {
-    transform: none;
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
+  margin-bottom: 2.11rem;
 }

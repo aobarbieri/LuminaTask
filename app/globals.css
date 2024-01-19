@@ -32,8 +32,8 @@ body {
   min-height           : 100vh;
   display              : flex;
   flex-direction       : column;
-  background-image     : url('../public/bg-image.png');
-  background-size      : fill;
+  background-image     : url('../assets/bg-img.png');
+  background-size      : contain;
   background-position-y: 4rem;
 }
 
@@ -63,7 +63,8 @@ input::placeholder {
   color: var(--placeholder);
 }
 
-.btn-primary {
+.btn-primary,
+.link-btn-primary {
   width         : 100%;
   height        : 3.875rem;
   padding       : 1rem 9.4375rem;
@@ -76,4 +77,40 @@ input::placeholder {
   line-height   : 1.875rem;
   letter-spacing: 0.01438rem;
   cursor        : pointer;
+}
+
+.link-btn-primary {
+  overflow   : hidden;
+  line-height: 3.875rem;
+}
+
+
+.outer-container {
+  width          : var(--app-width);
+  min-height     : 100%;
+  margin         : 0 auto;
+  flex           : 1;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+.inner-container {
+  background-color: #fff;
+  padding         : 5.76756rem 3.4465rem;
+  width           : 40.44338rem;
+  max-width       : 40.44338rem;
+  max-height      : 21.45rem;
+  border-radius   : .5rem;
+  border          : 2px solid var(--border-color);
+  text-align      : center;
+  box-shadow      : 0px 4.502px 60.782px 0px rgba(0, 0, 0, 0.10);
+}
+
+.inner-container h1 {
+  color         : var(--gray-1);
+  font-size     : 1.75rem;
+  font-weight   : 700;
+  line-height   : 1.875rem;
+  letter-spacing: 0.0175rem;
 }
