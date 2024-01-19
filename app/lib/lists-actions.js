@@ -1,12 +1,12 @@
 'use server'
-import { generateUUID, getTodayDateTime } from './utils'
+import { generateUUID, getTodayDate } from './utils'
 import { create, deleteList } from './lists-data'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 export async function newList(data) {
 	const listId = generateUUID()
-	const todayDateTime = getTodayDateTime()
+	const todayDateTime = getTodayDate()
 
 	const list = {
 		id: listId,

@@ -1,4 +1,4 @@
-import { CreateList } from '@/app/ui/lists/forms'
+import { CreateList } from '@/app/lists/ui/forms'
 import styles from './page.module.css'
 
 export default function NewList() {

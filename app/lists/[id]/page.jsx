@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import { getListById } from '@/app/lib/lists-data'
 import { getItems } from '@/app/lib/items-data'
 import { newItem } from '@/app/lib/items-actions'
-import { DeleteItem } from '@/app/ui/items/buttons'
+import { DeleteItem } from '@/app/items/ui/buttons'
 
 export default async function View({ params }) {
 	const listId = params.id

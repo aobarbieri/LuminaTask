@@ -3,10 +3,6 @@ import DeleteButton from './delete-btn'
 import { removeList, newList } from '@/app/lib/lists-actions'
 import styles from './forms.module.css'
 
-export function ViewList({ id }) {
-	return <Link href={`/lists/${id}`}>View</Link>
-}
-
 export function CreateList() {
 	return (
 		<form className={styles.createForm} action={newList}>
@@ -25,9 +21,4 @@ export function DeleteList({ id }) {
 			<DeleteButton />
 		</form>
 	)
-}
-
-export function UpdateList({ id }) {
-	//WIP
-	return <></>
 }
