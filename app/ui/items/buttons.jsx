@@ -1,7 +1,7 @@
-import { deleteItem } from '@/app/lib/items-actions'
+import { removeItem } from '@/app/lib/items-actions'
 
 export function DeleteItem({ id }) {
-	const deleteItemWithId = deleteItem.bind(null, id)
+	const deleteItemWithId = removeItem.bind(null, id)
 
 	return (
 		<form action={deleteItemWithId}>

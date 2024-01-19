@@ -1,13 +1,13 @@
 import { notFound } from 'next/navigation'
 import { fetchListById } from '@/app/lib/data'
-import { fetchListItems } from '@/app/lib/items-data'
-import { newItem } from '@/app/lib/actions'
+import { getItems } from '@/app/lib/items-data'
+import { newItem } from '@/app/lib/items-actions'
 import { DeleteItem } from '@/app/ui/items/buttons'
 
 export default async function View({ params }) {
 	const id = params.id
 	const list = await fetchListById(id)
-	const items = await fetchListItems(id)
+	const items = await getItems(id)
 
 	if (!list) {
 		notFound()

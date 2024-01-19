@@ -17,3 +17,25 @@
 `next/font` will automatically optimize your fonts (including custom fonts) and remove external network requests for improved privacy and performance.
 Automatically self-host any Google Font.
 Fonts are included in the deployment and served from the same domain as your deployment. No requests are sent to Google by the browser.
+
+## UUIDs (Universally Unique Identifier)
+
+UUIDs vs. Auto-incrementing Keys
+We use UUIDs instead of incrementing keys (e.g., 1, 2, 3, etc.). This makes the URL longer; however, UUIDs eliminate the risk of ID collision, are globally unique, and reduce the risk of enumeration attacks - making them ideal for large databases.
+However, if you prefer cleaner URLs, you might prefer to use auto-incrementing keys.
+
+## noStore() from next/cache
+
+Add noStore() inside the async function call to prevent the response from being cached. This is equivalent to in fetch(..., {cache: 'no-store'}).
+
+## async function in items-data and data
+
+@vercel/postgres library is designed to work seamlessly with Vercel serverless functions and automatically manages database connections for you. This library abstracts away the need for you to manually handle connection opening and closing.
+
+ex: using db.connect():
+const { db } = require('@vercel/postgres')
+async function listAction(action, arr) {
+await db.connect()
+}
+
+Therefore there is no need for `await db.connect()`
