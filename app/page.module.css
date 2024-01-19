@@ -19,7 +19,12 @@
 }
 
 .container h1 {
-  margin-bottom: 3.06rem;
+  margin-bottom : 3.06rem;
+  color         : var(--gray-1);
+  font-size     : 1.75rem;
+  font-weight   : 700;
+  line-height   : 1.875rem;
+  letter-spacing: 0.28px;
 }
 
 .container a {
@@ -32,6 +37,10 @@
   line-height   : 3.875rem;
   letter-spacing: 0.01438rem;
   color         : #fff;
+}
+
+.container a img {
+  margin-right: .625rem;
 }
 
 
