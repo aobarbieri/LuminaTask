@@ -23,4 +23,5 @@ export async function newList(data) {
 export async function removeList(id) {
 	await deleteList(id)
 	revalidatePath('/lists')
+	redirect('/lists')
 }
