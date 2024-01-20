@@ -6,7 +6,7 @@ export default function DeleteButton() {
 
 	return (
 		<button type='submit' aria-disabled={pending}>
-			{pending ? 'Deleting list ...' : 'X'}
+			{pending ? 'Deleting list ...' : 'Delete list'}
 		</button>
 	)
 }

@@ -1,50 +1,43 @@
 import { notFound } from 'next/navigation'
 import { getListById } from '@/app/lib/lists-data'
 import { getItems } from '@/app/lib/items-data'
-import { newItem } from '@/app/lib/items-actions'
 import { DeleteItem } from '@/app/items/ui/buttons'
+import { CreateItem } from '@/app/items/ui/forms'
 import { DeleteList } from '../ui/forms'
+import styles from './page.module.css'
 
 export default async function View({ params }) {
+	// params.id -> { id: '###'}
+	// listId -> ####
 	const listId = params.id
+
+	// list -> [{ list props }]
 	const list = await getListById(listId)
+
+	// items -> [{ item props}]
 	const items = await getItems(listId)
+	console.log(items.length)
 
 	if (!list) {
 		notFound()
 	}
-	console.log(items.length)
 
 	return (
-		<main>
-			<br />
-			<hr />
-			<h1>Add items to {list[0].name}&apos;s list</h1>
-
-			<form action={newItem}>
-				<input type='hidden' name='list-id' value={listId} />
-				<label htmlFor='name' id='name'>
-					Item name
-				</label>
-				<input type='text' name='name' id='name' required />
-				<label htmlFor='quantity' id='quantity'>
-					Quantity
-				</label>
-				<input type='number' name='quantity' id='quantity' required />
-				<button type='submit'>Add Item</button>
-			</form>
-			<br />
-			<hr />
-			<div>
-				<h2>List items here</h2>
-				{items?.map((item) => (
-					<div key={item.id}>
-						<p>{item.name}</p>
-						<p>{item.quantity}</p>
-						<DeleteItem id={item.id} />
-					</div>
-				))}
-			</div>
+		<main className={styles.main}>
+			<section>
+				<h2>{list[0].name}</h2>
+				Link
+				{/* <CreateItem listId={listId} /> */}
+				<div>
+					{items?.map((item) => (
+						<div className={styles.content} key={item.id}>
+							<p>{item.name}</p>
+							<p>{item.quantity}</p>
+							<DeleteItem id={item.id} />
+						</div>
+					))}
+				</div>
+			</section>
 			<DeleteList id={list[0].id} />
 		</main>
 	)

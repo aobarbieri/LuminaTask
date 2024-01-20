@@ -57,6 +57,11 @@ h1 {
   letter-spacing: 0.01969rem;
 }
 
+h2 {
+  font-size     : 1.68838rem;
+  letter-spacing: 0.01688rem;
+}
+
 h3 {
   font-size     : 1.26631rem;
   letter-spacing: 0.01269rem;
@@ -169,7 +174,7 @@ input::placeholder {
 
 .lists-container {
   background-color: #FFF;
-  transition      : background-color 0.3s;
+  transition      : background-color .3s;
 }
 
 .lists-container:hover {

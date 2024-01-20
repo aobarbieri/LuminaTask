@@ -1,0 +1,25 @@
+.main {
+    margin          : 0 auto;
+    width           : var(--app-width);
+    min-height      : 85vh;
+    background-color: #fff;
+    padding         : 2.53rem 3.45rem;
+    display         : flex;
+    flex-wrap       : wrap;
+    justify-content : space-between;
+    align-content   : stretch;
+}
+
+.main section {
+    width: 100%;
+}
+
+.main form {
+    margin    : 0 auto;
+    align-self: flex-end;
+}
+
+.content {
+    display        : flex;
+    justify-content: space-between;
+}
