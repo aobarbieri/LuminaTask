@@ -5,7 +5,7 @@ import styles from './forms.module.css'
 export function CreateList() {
 	return (
 		<form className={styles.createForm} action={newList}>
-			<input placeholder='List name' type='text' name='name' id='name' required />
+			<input className='input-secondary' placeholder='List name' type='text' name='name' id='name' required />
 			<button className='btn-primary' type='submit'>
 				Save
 			</button>

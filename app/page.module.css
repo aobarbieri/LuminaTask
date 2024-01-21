@@ -9,3 +9,9 @@
 .container a img {
   margin-right: .625rem;
 }
+
+@media screen and (max-width: 650px) {
+  .container h1 {
+    margin-bottom: 2.06rem;
+  }
+}
