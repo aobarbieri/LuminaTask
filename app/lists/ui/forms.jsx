@@ -16,7 +16,7 @@ export function CreateList() {
 export function DeleteList({ id }) {
 	const deleteListWithId = removeList.bind(null, id)
 	return (
-		<form action={deleteListWithId}>
+		<form action={deleteListWithId} className={styles.deleteList}>
 			<DeleteButton />
 		</form>
 	)

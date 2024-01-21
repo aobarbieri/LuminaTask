@@ -1,9 +1,11 @@
 import { notFound } from 'next/navigation'
 import { getListById } from '@/app/lib/lists-data'
 import { getItems } from '@/app/lib/items-data'
-import { DeleteItem } from '@/app/items/ui/buttons'
-import { CreateItem } from '@/app/items/ui/forms'
+import { CreateItem, DeleteItem } from '@/app/items/ui/forms'
 import { DeleteList } from '../ui/forms'
+import Link from 'next/link'
+import Image from 'next/image'
+import add from '@/assets/icons/add-dark.svg'
 import styles from './page.module.css'
 
 export default async function View({ params }) {
@@ -26,13 +28,16 @@ export default async function View({ params }) {
 		<main className={styles.main}>
 			<section>
 				<h2>{list[0].name}</h2>
-				Link
+				<Link className='link-btn-default' href='/'>
+					<Image src={add} alt='plus' width={14.351} height={14.351} />
+					Add item
+				</Link>
 				{/* <CreateItem listId={listId} /> */}
-				<div>
+				<div className={styles.wrapper}>
 					{items?.map((item) => (
 						<div className={styles.content} key={item.id}>
 							<p>{item.name}</p>
-							<p>{item.quantity}</p>
+							<span>{item.quantity}</span>
 							<DeleteItem id={item.id} />
 						</div>
 					))}

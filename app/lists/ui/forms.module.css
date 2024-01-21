@@ -2,3 +2,24 @@
     margin-top: 2.11rem;
     width     : 98%;
 }
+
+.deleteList {
+    margin    : 0 auto;
+    align-self: flex-end;
+}
+
+.deleteList button {
+    padding            : .5rem .9rem;
+    color              : var(--gray-4);
+    font-size          : .9rem;
+    font-weight        : 900;
+    background-color   : rgba(255, 0, 0, 0.605);
+    border-radius      : 0.3125rem;
+    transition-duration: .3s;
+}
+
+.deleteList button:hover {
+    background-color: rgba(255, 0, 0);
+    color           : #000;
+
+}

@@ -1,4 +1,5 @@
-import { newItem } from '@/app/lib/items-actions'
+import { newItem, removeItem } from '@/app/lib/items-actions'
+import DeleteButton from './buttons'
 
 export function CreateItem({ listId }) {
 	return (
@@ -13,6 +14,16 @@ export function CreateItem({ listId }) {
 			</label>
 			<input type='number' name='quantity' id='quantity' required />
 			<button type='submit'>Add Item</button>
+		</form>
+	)
+}
+
+export function DeleteItem({ id }) {
+	const deleteItemWithId = removeItem.bind(null, id)
+
+	return (
+		<form action={deleteItemWithId}>
+			<DeleteButton />
 		</form>
 	)
 }

@@ -1,11 +1,10 @@
-import { removeItem } from '@/app/lib/items-actions'
+import Image from 'next/image'
+import trash from '@/assets/icons/trash.svg'
 
-export function DeleteItem({ id }) {
-	const deleteItemWithId = removeItem.bind(null, id)
-
+export default function DeleteButton() {
 	return (
-		<form action={deleteItemWithId}>
-			<button>X</button>
-		</form>
+		<button type='submit'>
+			<Image src={trash} alt='trash' width={20} height={20} />
+		</button>
 	)
 }
