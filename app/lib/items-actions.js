@@ -2,6 +2,7 @@
 import { generateUUID } from './utils'
 import { deleteItem, create } from './items-data'
 import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/dist/server/api-utils'
 
 export async function newItem(data) {
 	const itemId = generateUUID()
