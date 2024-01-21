@@ -6,7 +6,7 @@ export async function getItems(listId) {
 	noStore()
 	try {
 		const data = await sql`SELECT items.* FROM items JOIN lists ON items.list_id = lists.id WHERE lists.id = ${listId}`
-		return data.rows
+		return data
 	} catch (err) {
 		console.error('Database Error:', err)
 		throw new Error('Failed to fetch list items.')

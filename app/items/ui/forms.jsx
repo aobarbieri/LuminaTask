@@ -1,5 +1,5 @@
 import { newItem, removeItem } from '@/app/lib/items-actions'
-import DeleteButton from '../buttons'
+import DeleteButton from './buttons'
 import styles from './forms.module.css'
 
 export function CreateItem({ listId, toggle }) {

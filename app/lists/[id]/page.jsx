@@ -12,7 +12,8 @@ export default async function View({ params }) {
 	const list = await getListById(listId)
 
 	// items -> [{ item props}]
-	const items = await getItems(listId)
+	const itemsTable = await getItems(listId)
+	const items = itemsTable.rows
 	// console.log(items.length)
 
 	if (!list) {

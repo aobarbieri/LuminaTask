@@ -4,6 +4,7 @@
     color           : var(--gray-2);
     font-weight     : 500;
     background-color: #fff;
+    border-bottom   : 1.126px solid #DDD;
 }
 
 .header nav {
