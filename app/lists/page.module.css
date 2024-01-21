@@ -26,3 +26,30 @@
     margin-bottom  : 1.18rem;
     align-items    : center;
 }
+
+@media screen and (max-width: 990px) {
+    .main {
+        width: 90%;
+    }
+
+    .wrapper {
+        flex-wrap: wrap;
+        row-gap  : .5rem;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .main {
+        padding: 2.31rem 0 0;
+    }
+
+    .content {
+        padding: 1.46rem 2.5rem;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .content {
+        padding: 1.46rem 1.8rem;
+    }
+}
