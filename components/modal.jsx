@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import close from '@/assets/icons/close.svg'
-
 import styles from './modal.module.css'
-import Link from 'next/link'
 
 export default function Modal({ children, toggle }) {
 	return (

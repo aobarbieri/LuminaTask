@@ -257,7 +257,6 @@ input::placeholder {
 }
 
 @media screen and (max-width: 650px) {
-
   .input-secondary {
     height   : 2.9rem;
     font-size: 1.1375rem;
@@ -272,11 +271,8 @@ input::placeholder {
 
   .inner-container h1 {
     font-size: 1.35rem;
-
   }
-
 }
-
 
 @media screen and (max-width: 430px) {
   .inner-container {
