@@ -5,7 +5,7 @@ import { unstable_noStore as noStore } from 'next/cache'
 export async function getLists() {
 	noStore()
 	try {
-		const data = await sql`SELECT * FROM lists ORDER BY name ASC`
+		const data = await sql`SELECT * FROM lists ORDER BY date_created ASC`
 		return data.rows
 	} catch (err) {
 		console.error('Database Error:', err)
